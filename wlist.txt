@@ -40,7 +40,6 @@ reedy
 baton
 shabu
 blips
-Lucid
 msapp
 https
 blind
@@ -177,7 +176,6 @@ figca
 souls
 donut
 defoe
-abc's
 riser
 tonal
 cedar
@@ -206,7 +204,6 @@ nerds
 clype
 chair
 brown
-anon.
 taegu
 pedal
 gidar
@@ -380,7 +377,6 @@ rubus
 quint
 troth
 lidar
-dateM
 frank
 recto
 hollo
@@ -403,7 +399,6 @@ fraud
 pricy
 gains
 grias
-hsv-1
 fords
 folie
 ruble
@@ -416,7 +411,6 @@ lumps
 jinks
 pesto
 dogie
-First
 tiber
 wrest
 qiang
@@ -456,7 +450,6 @@ dryad
 provo
 foggy
 humid
-on_it
 glide
 aalto
 nehru
@@ -487,7 +480,6 @@ piper
 befit
 fewer
 polar
-BREAK
 boffo
 wheat
 asama
@@ -629,7 +621,6 @@ robes
 deere
 apace
 licks
-Trebu
 tangy
 happy
 damon
@@ -714,9 +705,7 @@ plunk
 payer
 trope
 flier
-Sawar
 oasis
-xxvii
 shuck
 argil
 heigh
@@ -731,7 +720,6 @@ mavis
 bogus
 gassy
 bossy
-leo_i
 truce
 congo
 filum
@@ -750,7 +738,6 @@ verbs
 hutch
 ephah
 tacky
-DOWNL
 gelid
 noemi
 enlil
@@ -843,10 +830,8 @@ emend
 mingy
 nidus
 greet
-POINT
 fauna
 dukas
-PROFI
 teary
 belle
 cleat
@@ -903,7 +888,6 @@ shtik
 leone
 daunt
 hater
-yo-yo
 cello
 razor
 deity
@@ -959,7 +943,6 @@ crass
 ummah
 jquer
 mazer
-t-man
 fades
 mirth
 gruel
@@ -1013,7 +996,6 @@ power
 beige
 anzac
 asian
-be_on
 fryer
 tying
 minge
@@ -1050,7 +1032,6 @@ rings
 tansy
 esaki
 merit
-Arial
 malay
 enter
 alloy
@@ -1133,7 +1114,6 @@ fress
 varna
 nefud
 nauru
-cox-2
 scull
 galax
 pitta
@@ -1244,7 +1224,6 @@ apish
 cachi
 glory
 macau
-feb_2
 boule
 qualm
 octet
@@ -1290,7 +1269,6 @@ gulps
 class
 glial
 tooth
-Hirag
 lyric
 vines
 brule
@@ -1316,7 +1294,6 @@ favor
 flora
 flame
 knell
-Sourc
 lungi
 gorky
 cocos
@@ -1407,7 +1384,6 @@ rondo
 touts
 cacao
 skeat
-a-one
 earth
 floss
 jelly
@@ -1448,7 +1424,6 @@ raver
 yawns
 nimby
 hogan
-Stick
 icons
 lindy
 tulsa
@@ -1610,7 +1585,6 @@ lulli
 lange
 gravy
 smoky
-hsv-i
 bosch
 comal
 pilea
@@ -1712,7 +1686,6 @@ lance
 gammy
 booze
 copal
-porto
 desks
 slaps
 habit
@@ -1763,7 +1736,6 @@ quasi
 fetal
 loupe
 padua
-et_al
 crecy
 masai
 leyte
@@ -1834,7 +1806,6 @@ nanny
 chyme
 sells
 finis
-ch'in
 sable
 abomb
 makin
@@ -1909,7 +1880,6 @@ royal
 buret
 shout
 kappa
-go_in
 awash
 artsd
 karok
@@ -1956,7 +1926,6 @@ adsby
 bantu
 basis
 hoary
-Image
 trick
 thump
 niobe
@@ -2075,7 +2044,6 @@ roofy
 hopes
 carve
 robin
-CHECK
 besom
 tatar
 nasua
@@ -2097,7 +2065,6 @@ prick
 tests
 beams
 whang
-PICKU
 gafsa
 north
 xcvii
@@ -2157,7 +2124,6 @@ gimel
 mitra
 atony
 lemna
-AMAZO
 emmer
 owing
 thigh
@@ -2182,7 +2148,6 @@ organ
 flits
 ipsus
 goofy
-kw-hr
 liken
 wormy
 gouda
@@ -2232,7 +2197,6 @@ decal
 kazan
 boole
 weedy
-co-ed
 hebei
 whomp
 unary
@@ -2368,7 +2332,6 @@ moats
 being
 lamia
 puffy
-do_it
 spoil
 stung
 shrug
@@ -2406,7 +2369,6 @@ chewa
 swirl
 garbo
 gnome
-addEv
 quays
 proof
 parse
@@ -2561,7 +2523,6 @@ plonk
 boney
 ament
 halts
-big_h
 stack
 saucy
 coast
@@ -2576,7 +2537,6 @@ verpa
 haven
 newel
 meals
-blogP
 demob
 white
 salon
@@ -2691,20 +2651,16 @@ nudge
 bream
 quids
 prays
-ph.d.
 ascii
 hover
 hidde
 adapt
 swell
 pukka
-hsv-2
 arawn
 rainy
 plane
 domes
-to_it
-x-ray
 paves
 testy
 chugs
@@ -2749,7 +2705,6 @@ munda
 corns
 therm
 jinja
-Close
 bedim
 sidon
 vista
@@ -2893,7 +2848,6 @@ filch
 aditi
 slurp
 usuli
-fadeI
 beryl
 rinse
 mover
@@ -2924,7 +2878,6 @@ mince
 deals
 yodel
 swill
-getCo
 lorre
 malti
 ulmus
@@ -3042,7 +2995,6 @@ kempt
 baggy
 uveal
 varus
-dr._j
 ileus
 filmy
 jawed
@@ -3074,10 +3026,7 @@ brill
 opepe
 godly
 seedy
-conti
-haart
 thole
-dateP
 tired
 fleas
 comte
@@ -3227,7 +3176,6 @@ bumph
 vertu
 manna
 zloty
-li_po
 jingo
 durga
 pinna
@@ -3311,7 +3259,6 @@ sedna
 hades
 prize
 bound
-in_on
 lefts
 eolic
 scams
@@ -3409,7 +3356,6 @@ kraft
 filet
 diver
 hawks
-Artic
 heady
 lodge
 iliac
@@ -3418,7 +3364,6 @@ kerbs
 nusku
 frogs
 snips
-fa_la
 ovral
 allah
 cider
@@ -3482,7 +3427,6 @@ tabuk
 pekan
 biter
 shari
-ne'er
 arson
 count
 debit
@@ -3568,7 +3512,6 @@ lapse
 tenet
 darpa
 pails
-to-do
 wires
 imago
 tusks
@@ -3658,7 +3601,6 @@ dusky
 thuja
 wispy
 final
-cox-1
 ragee
 reach
 steel
@@ -3678,7 +3620,6 @@ sedum
 belch
 saver
 keyed
-men's
 dinge
 keywo
 hrolf
@@ -3753,7 +3694,6 @@ trait
 chill
 terns
 riata
-do_in
 radix
 gales
 envoy
@@ -3762,7 +3702,6 @@ wordy
 thyme
 dusts
 filer
-Segoe
 rnase
 hatch
 latch
@@ -3784,7 +3723,6 @@ brahe
 dinar
 saami
 endow
-go_on
 turns
 firth
 swots
@@ -3830,7 +3768,6 @@ blate
 asarh
 miasm
 dryas
-go_to
 fijis
 phyle
 preys
@@ -3860,7 +3797,6 @@ ensue
 lazio
 lowry
 miami
-up_to
 ousts
 haoma
 vepse
@@ -3937,9 +3873,7 @@ bronc
 price
 volar
 misty
-or_so
 abila
-ibid.
 ninib
 trust
 water
@@ -4206,7 +4140,6 @@ pinko
 drama
 yahve
 peavy
-up_on
 suede
 heart
 wheel
@@ -4338,7 +4271,6 @@ scurf
 skirl
 wombs
 nonce
-leo_x
 alate
 bruce
 award
@@ -4352,7 +4284,6 @@ harpo
 senna
 ahura
 axiom
-gen_x
 atrip
 sonic
 oakum
@@ -4371,7 +4302,6 @@ befog
 vamps
 wanes
 falco
-one_c
 kiley
 music
 wally
@@ -4543,7 +4473,6 @@ blair
 mambo
 skids
 curse
-FontA
 board
 adept
 gesso
@@ -4687,7 +4616,6 @@ spirt
 alder
 medoc
 spent
-Kosug
 conto
 caaba
 bonce
@@ -4807,8 +4735,7 @@ swims
 swarm
 sauna
 goals
-slime
-Organ
+slimo
 upper
 galen
 gulag
@@ -4826,7 +4753,6 @@ stove
 liger
 fried
 pilaw
-co-op
 tardy
 druze
 teeny
@@ -4840,7 +4766,6 @@ prone
 agaze
 wiper
 sours
-may_1
 saves
 taper
 mitre
@@ -5026,7 +4951,6 @@ drill
 flunk
 hints
 sires
-cd-wo
 glenn
 loyal
 carny
@@ -5160,7 +5084,6 @@ jafar
 nisei
 nevis
 learn
-do_up
 nnrti
 jihad
 triad
@@ -5228,7 +5151,6 @@ deneb
 accho
 wolff
 grins
-mm_hg
 movie
 uygur
 diwan
@@ -5343,7 +5265,6 @@ trike
 inure
 lamna
 hunts
-go_up
 odesa
 sherd
 afspc
@@ -5356,7 +5277,6 @@ hanoi
 botox
 prose
 looms
-Canno
 chelp
 recur
 gouty
@@ -5368,7 +5288,6 @@ torts
 isles
 karat
 grind
-Perso
 tinea
 hurts
 clots
@@ -5392,7 +5311,6 @@ kylix
 dolly
 scuba
 lopid
-COMME
 forks
 razed
 crazy
@@ -5418,7 +5336,6 @@ andes
 ebola
 chian
 whelp
-non-u
 nyala
 annum
 addle
@@ -5438,7 +5355,6 @@ singu
 fused
 dotes
 gloat
-hi-fi
 order
 soppy
 advil
@@ -5455,7 +5371,6 @@ selva
 gleam
 cager
 pliny
-no-go
 unite
 humin
 wimpy
@@ -5538,7 +5453,6 @@ alger
 louse
 limpa
 milne
-do_by
 bolts
 drown
 doris
@@ -5629,7 +5543,6 @@ gaily
 ditty
 croak
 cavil
-WebPa
 ascus
 displ
 bowed
@@ -5645,7 +5558,6 @@ selar
 build
 urban
 cairo
-go_by
 delta
 opium
 tenno
@@ -5667,7 +5579,6 @@ dumpy
 skive
 afire
 woozy
-Previ
 telex
 quick
 bairn
@@ -5718,7 +5629,6 @@ rifts
 tasks
 tappa
 adopt
-DOMCo
 zilch
 chasm
 hazel
@@ -5868,7 +5778,6 @@ spoke
 konoe
 copes
 genic
-BOOKM
 props
 heard
 furze
@@ -5876,7 +5785,6 @@ felly
 elops
 eider
 serow
-bos'n
 saury
 savor
 loses
@@ -6055,7 +5963,6 @@ blots
 fluor
 boron
 lassa
-mainE
 baulk
 snarf
 fount
