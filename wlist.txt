@@ -47,7 +47,6 @@ lemma
 tawny
 claro
 prexy
-sanaa
 gorse
 lithe
 corse
@@ -88,7 +87,6 @@ clown
 lobed
 chico
 nepal
-rudra
 fatso
 weepy
 brunt
@@ -310,7 +308,6 @@ maths
 genre
 oscar
 clepe
-evers
 karen
 label
 ceras
@@ -941,7 +938,6 @@ bleat
 pinky
 crass
 ummah
-jquer
 mazer
 fades
 mirth
@@ -965,7 +961,6 @@ vicia
 apios
 macaw
 wades
-tyson
 safar
 edged
 dubya
@@ -1558,7 +1553,6 @@ icaco
 keeps
 niger
 amino
-ilxxx
 boner
 menus
 stoup
@@ -2248,7 +2242,6 @@ irena
 fidel
 kopje
 knits
-musgu
 chaff
 cajun
 midst
@@ -2389,7 +2382,6 @@ snowy
 glyph
 super
 jidda
-lviii
 often
 guest
 fully
@@ -2468,7 +2460,6 @@ mothy
 nervi
 bevel
 frier
-xviii
 usbeg
 minah
 rough
@@ -2677,7 +2668,6 @@ loots
 gerea
 albee
 cheek
-oscan
 platy
 flail
 below
@@ -2748,7 +2738,6 @@ ergot
 banff
 shogi
 tacca
-uskub
 ditch
 toffy
 zebra
@@ -2933,7 +2922,6 @@ cinch
 optic
 wyeth
 gripe
-lxxxi
 segal
 birch
 sport
@@ -2948,7 +2936,6 @@ speed
 hated
 slang
 topee
-tsuga
 publi
 vireo
 ogres
@@ -3361,7 +3348,6 @@ lodge
 iliac
 tined
 kerbs
-nusku
 frogs
 snips
 ovral
@@ -3381,7 +3367,6 @@ abuse
 frock
 ideal
 prion
-ushas
 maize
 toddy
 sixer
@@ -3571,7 +3556,6 @@ fixer
 stuff
 dogma
 immix
-clxxx
 nevus
 yemen
 heads
@@ -3887,7 +3871,6 @@ pekoe
 golds
 maleo
 layer
-lxxiv
 pubes
 satyr
 armor
@@ -3973,7 +3956,6 @@ chirk
 tandy
 shtup
 litas
-lxiii
 etude
 ulcer
 trams
@@ -4063,7 +4045,6 @@ apart
 parsi
 overs
 annam
-lxxvi
 nomad
 smirk
 fella
@@ -4317,7 +4298,6 @@ tartu
 descr
 cycle
 fiord
-xciii
 essen
 afoul
 fumes
@@ -4361,7 +4341,6 @@ asura
 stock
 yokes
 malls
-xxxii
 inion
 dizen
 houri
@@ -4446,12 +4425,10 @@ amble
 magic
 spite
 spike
-osaka
 clash
 aphid
 corgi
 lumpy
-lxxxv
 seine
 varro
 eibit
@@ -4503,7 +4480,6 @@ dairy
 cramp
 pleas
 mauve
-xliii
 sonar
 quran
 porch
@@ -4563,7 +4539,6 @@ malto
 coapt
 cyder
 yahwe
-xxxiv
 ensky
 cirio
 posit
@@ -4741,7 +4716,6 @@ galen
 gulag
 snack
 khadi
-qepiq
 sound
 diazo
 peels
@@ -4840,9 +4814,7 @@ jumpy
 mined
 moved
 datum
-xxxvi
 plots
-clxxv
 reich
 unity
 blush
@@ -4899,7 +4871,6 @@ spend
 vioxx
 ridge
 piety
-psyop
 pious
 zonal
 shina
@@ -5220,7 +5191,6 @@ bevin
 muggy
 quipu
 gorki
-xxiii
 golan
 rhumb
 gibit
@@ -5525,7 +5495,6 @@ spate
 exams
 wheal
 hussy
-objec
 vaned
 kroto
 exalt
@@ -5740,7 +5709,6 @@ niddm
 goads
 audit
 yokel
-uzbek
 aruru
 prink
 rigil
@@ -6062,7 +6030,6 @@ sourc
 ekman
 wicca
 shoat
-smsgt
 beats
 ticks
 urine

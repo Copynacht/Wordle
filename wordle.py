@@ -1,23 +1,25 @@
 import numpy as np
 
-oWords = list() #元本
 words = list()
+nonWords = list()
 data = np.zeros((26, 11), dtype=np.int16)
-
-weightingData = np.zeros((5, 5, 5))
 
 files = ["first.csv", "second.csv", "third.csv", "fourth.csv", "fifth.csv"]
 weighting = np.zeros((5, 3))
+weighting2 = np.zeros((5, 2))
 kingN = 0
-answer = ''
+kingN2 = 0
+which = 0
 # 一つ目のweightは不明、二つ目は一致、三つ目は含まれる
 weighting = [[1, 7, 1], [1, 1, 5], [7, 3, 3], [1, 1, 1], [1, 1, 1]]
+weighting2 = [[11, 5], [1, 0], [1, 0], [1, 5], [1, 0]]
+
 
 # wordsの初期化
 f = open("wlist.txt", "r")
 wList = f.readlines()
 for w in range(len(wList)):
-    oWords.append(wList[w].replace('\n', ''))
+    words.append(wList[w].replace('\n', ''))
 
 
 # dataの初期化
@@ -59,11 +61,14 @@ def ManipulateData(inp):
                     data[ord(inp[i]["alphabet"])-97][5]=2
 
 
-# 次のwordをdataより解析
+# 可能性の残っているwordをdataより解析
 def NextWordAnalyzer(to):
-    global words, data, kingN
+    global words, data, kingN, kingN2, which
     king = 0
+    king2 = 0
     kingN = 0
+    kingN2 = 0
+    which = 0
     newWords = list()
     for w in range(len(words)):
         r = 1
@@ -98,89 +103,48 @@ def NextWordAnalyzer(to):
             if count > king:
                 king = count
                 kingN = len(newWords)-1
-                
+        if r == 0:
+            nonWords.append(words[w])
+    for nw in range(len(nonWords)):
+        count2 = 0
+        for m in range(5):
+            if data[ord(nonWords[nw][m])-97][5] == 0:
+                count2 += data[ord(nonWords[nw][m])-97][m]*weighting[to-2][0]
+            if data[ord(nonWords[nw][m])-97][5] == 1:
+                count2 += data[ord(nonWords[nw][m])-97][m]*weighting[to-2][1]
+            if data[ord(nonWords[nw][m])-97][5] == 2:
+                count2 += data[ord(nonWords[nw][m])-97][m]*weighting[to-2][2]
+        if count2 > king2:
+            king2 = count2
+            kingN2 = nw
+    if king*weighting2[to-2][0] < king2*weighting2[to-2][1]:
+        which = 1
+
     words = list()
     words.extend(newWords)
 
 
-# 返答を作成
-def Answer(inp):
-    global answer
-    r = [0]*5
+def inputManip():
     ret = list()
-    for m in range(5):
-        chk = 0
-        for n in range(5):
-            if inp[m] == answer[n]:
-                chk = 1
-                if m==n:
-                    r[m]=1+m
-                else:
-                    if not (1<=r[m] and r[m]<=5):
-                        r[m]=11+m
-        if chk==0:
-            r[m]=10
-    for m in range(5):
-        for n in range(5-m):
-            if inp[m] == inp[m+n]:
-                cnt=0
-                cnt2=0
-                for o in range(5):
-                    if answer[o]==inp[m]:
-                        cnt+=1
-                    if inp[o]==inp[m]:
-                        if (1<=r[o] and r[o]<=5) or (11<=r[o] and r[o]<=15):
-                            cnt2+=1
-                if cnt>=cnt2:
-                    break
-                if r[m] == m+1 and r[m+n] == m+n+1:
-                    pass
-                elif r[m] == m+1:
-                    r[m+n]=10
-                elif r[m+n] == m+n+1:
-                    r[m]=10
-    for m in range(5):
-        ret.append({"alphabet":inp[m], "judgement": r[m]})
+    inp = input() # bgoob  #bはblack,gはgreen,oはorange
+    for n in range(5):
+        if inp[n]=='g':
+            ret.append({"alphabet": ans[n], "judgement": n+1})
+        elif inp[n]=='o':
+            ret.append({"alphabet": ans[n], "judgement": n+11})
+        elif inp[n]=='b':
+            ret.append({"alphabet": ans[n], "judgement": 10})
     return ret
+            
 
-for f in range(5):
-    kingx = 0
-    kingy = 0
-    kingz = 0
-    kingxyz=100
-    for x in range(5):
-        for y in range(5):
-            for z in range(5):
-                weighting[f][0]=2*x+1
-                weighting[f][1]=2*y+1
-                weighting[f][2]=2*z+1
-                count=0
-                for m in range(200):
-                    words = list()
-                    words.extend(oWords)
-                    data[:,5:11].fill(0)
-                    answer = oWords[1000+m]
-                    ans='arise'
-                    chk=0
-                    print('x:' + str(x) +'y:' + str(y) +'z:' + str(z) +'m:' + str(m))
-                    for test in range(5):
-                        if len(words)==1:
-                            count+=test+1
-                            chk=1
-                            break
-                        ManipulateData(Answer(ans))
-                        NextWordAnalyzer(test+2)
-                        ans=words[kingN]
-                    if chk==0:
-                        count+=10
-                if (count/100)<kingxyz:
-                    kingxyz=count/100
-                    kingx = x
-                    kingy = y
-                    kingz = z
-                weightingData[x][y][z]=(count/200)
-    weighting[f][0]=2*kingx+1
-    weighting[f][1]=2*kingy+1
-    weighting[f][2]=2*kingz+1
-    np.save(str(f) +'.npy', weightingData)
-print(weighting)
+ans='arise'
+print('arise')
+for test in range(5):
+    ManipulateData(inputManip())
+    NextWordAnalyzer(test+2)
+    ans=words[kingN]
+    if which == 0:
+        ans = words[kingN]
+    else:
+        ans = nonWords[kingN2]
+    print(ans)
