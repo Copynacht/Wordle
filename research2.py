@@ -14,15 +14,15 @@ for d in range(5):
     for a in range(26):
         work = read[a].split(',')
         if d==0:
-            first.append({'alp' : work[0], 'rank': int(work[2].replace('\n', ''))})
+            first.append({'alp' : work[0], 'rank': int(work[1].replace('\n', ''))})
         if d==1:
-            second.append({'alp' : work[0], 'rank': int(work[2].replace('\n', ''))})
+            second.append({'alp' : work[0], 'rank': int(work[1].replace('\n', ''))})
         if d==2:
-            third.append({'alp' : work[0], 'rank': int(work[2].replace('\n', ''))})
+            third.append({'alp' : work[0], 'rank': int(work[1].replace('\n', ''))})
         if d==3:
-            fourth.append({'alp' : work[0], 'rank': int(work[2].replace('\n', ''))})
+            fourth.append({'alp' : work[0], 'rank': int(work[1].replace('\n', ''))})
         if d==4:
-            fifth.append({'alp' : work[0], 'rank': int(work[2].replace('\n', ''))})
+            fifth.append({'alp' : work[0], 'rank': int(work[1].replace('\n', ''))})
 
 f = open("wlist.txt", "r")
 wList = f.readlines()
@@ -44,7 +44,5 @@ for m in range(len(wList)):
     if score>king:
         king=score
         kingN = m
-    if score==122:
-        print(wList[m])
 print(king)
 print(wList[kingN])

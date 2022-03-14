@@ -1,3 +1,5 @@
+# https://seleniumbase.io/cdn/txt/wordle_words.txt
+
 wList = list()
 alp = [0] * 26
 first = [0] * 26
@@ -26,19 +28,19 @@ for m in range(len(wList)):
         
 with open('all.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(alp[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(alp[n]) + '\n')
 with open('first.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(first[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(first[n]) + '\n')
 with open('second.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(second[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(second[n]) + '\n')
 with open('third.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(third[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(third[n]) + '\n')
 with open('fourth.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(fourth[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(fourth[n]) + '\n')
 with open('fifth.csv', 'w') as f:
     for n in range(len(alp)):
-        f.write('"alp":"' + chr(n+97) + '",sum:' + str(fifth[n]) + ',\n')
+        f.write(chr(n+97) + ',' + str(fifth[n]) + '\n')

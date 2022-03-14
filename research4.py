@@ -11,7 +11,7 @@ weighting = np.zeros((5, 3))
 kingN = 0
 answer = ''
 # 一つ目のweightは不明、二つ目は一致、三つ目は含まれる
-weighting = [[1, 7, 1], [1, 1, 5], [7, 3, 3], [1, 1, 1], [1, 1, 1]]
+weighting = [[5, 5, 5], [5, 5, 5], [5, 5, 5], [5, 5, 5], [5, 5, 5]]
 
 # wordsの初期化
 f = open("wlist.txt", "r")
@@ -26,37 +26,41 @@ for d in range(5):
     read = f.readlines()
     for a in range(26):
         work = read[a].split(',')
-        data[a][d] = int(work[2])
+        data[a][d] = int(work[1])
         
 
 # inputに対してdataを操作する関数
 def ManipulateData(inp):
     global data
     # inpは辞書型の要素５個の配列、{'alphabet':'a','judgement',2}
-    # 0は不明、1～5は一致、11~15は含まれている、10は含まれていない
-    for i in range(len(inp)):
-        if 97 <= ord(inp[i]["alphabet"]) and ord(inp[i]["alphabet"]) <= 122:
+    for gob in range(2):
+        for i in range(len(inp)):
+            # 0は不明、1～5は一致、11~15は含まれている、10は含まれていない
             # [5]が0の場合は不明、1の場合は含まれている、2の場合は確定、10の場合は含まれていない
-            # 位置確定
-            if 1<=inp[i]["judgement"] and inp[i]["judgement"]<=5:
-                data[ord(inp[i]["alphabet"])-97][5]=1
-                data[ord(inp[i]["alphabet"])-97][5+inp[i]["judgement"]]=1
-            # 含まれている
-            if 11<=inp[i]["judgement"] and inp[i]["judgement"]<=15:
-                data[ord(inp[i]["alphabet"])-97][5] = 1
-                data[ord(inp[i]["alphabet"])-97][inp[i]["judgement"]-5]=10
-            # 含まれていない(重複がない場合の可能性もある)
-            if inp[i]["judgement"] == 10:
-                chk=0
-                for n in range(5):
-                    if data[ord(inp[i]["alphabet"])-97][6+n]!=1:
-                        data[ord(inp[i]["alphabet"])-97][6+n]=10
-                    else:
-                        chk=1
-                if chk==0:
-                    data[ord(inp[i]["alphabet"])-97][5]=10
-                else:
-                    data[ord(inp[i]["alphabet"])-97][5]=2
+            if gob == 0:  # goのみ検索
+                # 場所特定
+                if 1 <= inp[i]["judgement"] and inp[i]["judgement"] <= 5:
+                    data[ord(inp[i]["alphabet"])-97][5] = 1
+                    data[ord(inp[i]["alphabet"])-97][5+inp[i]["judgement"]] = 1
+                # 含まれている
+                if 11 <= inp[i]["judgement"] and inp[i]["judgement"] <= 15:
+                    data[ord(inp[i]["alphabet"])-97][5] = 1
+                    data[ord(inp[i]["alphabet"])-97][inp[i]
+                                                     ["judgement"]-5] = 10
+            if gob == 1:
+                # 含まれていない(重複がない場合の可能性もある)
+                if inp[i]["judgement"] == 10:
+                    chk = 0
+                    if data[ord(inp[i]["alphabet"])-97][5] == 1:
+                        for n in range(5):
+                            if data[ord(inp[i]["alphabet"])-97][6+n] == 1:
+                                chk = 1
+                        if chk == 1:
+                            data[ord(inp[i]["alphabet"])-97][5] = 2
+                        else:
+                            data[ord(inp[i]["alphabet"])-97][6+i] = 10
+                    elif data[ord(inp[i]["alphabet"])-97][5] == 0:
+                        data[ord(inp[i]["alphabet"])-97][5] = 10
 
 
 # 次のwordをdataより解析
@@ -98,7 +102,6 @@ def NextWordAnalyzer(to):
             if count > king:
                 king = count
                 kingN = len(newWords)-1
-                
     words = list()
     words.extend(newWords)
 
@@ -160,9 +163,10 @@ for f in range(5):
                     words.extend(oWords)
                     data[:,5:11].fill(0)
                     answer = oWords[1000+m]
-                    ans='arise'
+                    print(answer)
+                    ans='later'
                     chk=0
-                    print('x:' + str(x) +'y:' + str(y) +'z:' + str(z) +'m:' + str(m))
+                    print('f:' + str(f) + 'x:' + str(x) +'y:' + str(y) +'z:' + str(z) +'m:' + str(m))
                     for test in range(5):
                         if len(words)==1:
                             count+=test+1

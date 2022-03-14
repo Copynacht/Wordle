@@ -1,29 +1,28 @@
-import numpy as np
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.chrome import service
+from selenium.webdriver.common.by import By
+import numpy as np, time
 
-oWords = list()  # 元本
 words = list()
 nonWords = list()
 data = np.zeros((26, 11), dtype=np.int16)
 
-weightingData = np.zeros((5))
-
 files = ["first.csv", "second.csv", "third.csv", "fourth.csv", "fifth.csv"]
 weighting = np.zeros((5, 3))
 weighting2 = np.zeros((5, 2))
-kingN = 0
-kingN2 = 0
-which = 0
-answer = ''
+kingN, kingN2, which = 0, 0, 0
 # 一つ目のweightは不明、二つ目は一致、三つ目は含まれる
 weighting = [[9, 7, 1], [5, 7, 3], [3, 9, 1], [1, 1, 1], [1, 1, 1]]
-weighting2 = [[5, 5], [1, 0], [1, 0], [1, 0], [1, 0]]
+weighting2 = [[7, 5], [9, 5], [7, 5], [1, 5], [1, 0]]
+ans = 'later'
 
 
 # wordsの初期化
 f = open("wlist.txt", "r")
 wList = f.readlines()
 for w in range(len(wList)):
-    oWords.append(wList[w].replace('\n', ''))
+    words.append(wList[w].replace('\n', ''))
 
 
 # dataの初期化
@@ -33,6 +32,17 @@ for d in range(5):
     for a in range(26):
         work = read[a].split(',')
         data[a][d] = int(work[1])
+
+
+# wordleに入力
+def keyboard_input(b, word):
+    for n in range(5):
+        time.sleep(0.1)
+        if keyboard.index(word[n])>=19:
+            b[keyboard.index(word[n])+1].click()
+        else:
+            b[keyboard.index(word[n])].click()
+    b[19].click()
 
 
 # inputに対してdataを操作する関数
@@ -69,14 +79,10 @@ def ManipulateData(inp):
                         data[ord(inp[i]["alphabet"])-97][5] = 10
 
 
-# 次のwordをdataより解析
+# 可能性の残っているwordをdataより解析
 def NextWordAnalyzer(to):
     global words, data, kingN, kingN2, which
-    king = 0
-    king2 = 0
-    kingN = 0
-    kingN2 = 0
-    which = 0
+    king, king2, kingN, kingN2, which = 0, 0, 0, 0, 0
     newWords = list()
     for w in range(len(words)):
         r = 1
@@ -127,84 +133,64 @@ def NextWordAnalyzer(to):
             kingN2 = nw
     if king*weighting2[to-2][0] < king2*weighting2[to-2][1]:
         which = 1
+
     words = list()
     words.extend(newWords)
 
 
-# 返答を作成
-def Answer(inp):
-    global answer
-    r = [0]*5
+def inputManip():
     ret = list()
-    for m in range(5):
-        chk = 0
-        for n in range(5):
-            if inp[m] == answer[n]:
-                chk = 1
-                if m == n:
-                    r[m] = 1+m
-                else:
-                    if not (1 <= r[m] and r[m] <= 5):
-                        r[m] = 11+m
-        if chk == 0:
-            r[m] = 10
-    for m in range(5):
-        for n in range(5-m):
-            if inp[m] == inp[m+n]:
-                cnt = 0
-                cnt2 = 0
-                for o in range(5):
-                    if answer[o] == inp[m]:
-                        cnt += 1
-                    if inp[o] == inp[m]:
-                        if (1 <= r[o] and r[o] <= 5) or (11 <= r[o] and r[o] <= 15):
-                            cnt2 += 1
-                if cnt >= cnt2:
-                    break
-                if r[m] == m+1 and r[m+n] == m+n+1:
-                    pass
-                elif r[m] == m+1:
-                    r[m+n] = 10
-                elif r[m+n] == m+n+1:
-                    r[m] = 10
-    for m in range(5):
-        ret.append({"alphabet": inp[m], "judgement": r[m]})
+    inp = ''
+    # bgoob  #bはblack,gはgreen,oはorange
+    for n in range(5):
+        if gt[n].get_attribute('evaluation') == 'absent': #b
+            inp+='b'
+        if gt[n].get_attribute('evaluation') == 'present': #o
+            inp+='o'
+        if gt[n].get_attribute('evaluation') == 'correct': #g
+            inp+='g'
+    for n in range(5):
+        if inp[n] == 'g':
+            ret.append({"alphabet": ans[n], "judgement": n+1})
+        elif inp[n] == 'o':
+            ret.append({"alphabet": ans[n], "judgement": n+11})
+        elif inp[n] == 'b':
+            ret.append({"alphabet": ans[n], "judgement": 10})
     return ret
 
 
-for f in range(4):
-    kingx = 0
-    kingxyz = 100
-    for x in range(5):
-        weighting2[f][0] = 2*x+1
-        weighting2[f][1] = 5
-        count = 0
-        for m in range(100):
-            words = list()
-            words.extend(oWords)
-            nonWords = list()
-            data[:, 5:11].fill(0)
-            answer = oWords[2000+m]
-            ans = 'later'
-            chk = 0
-            print('f:' +str(f) + 'x:' + str(x) + 'm:' + str(m))
-            for test in range(5):
-                if len(words) == 1:
-                    count+=test+1
-                    chk = 1
-                    break
-                ManipulateData(Answer(ans))
-                NextWordAnalyzer(test+2)
-                if which == 0:
-                    ans = words[kingN]
-                else:
-                    ans = nonWords[kingN2]
-            if chk == 0:
-                count += 10
-        if (count/100) < kingxyz:
-            kingxyz = count/100
-            kingx = x
-        weightingData[x] = (count/100)
-    weighting2[f][0] = 2*kingx+1
-    np.save(str(f)+'2.npy', weightingData)
-print(weighting2)
+CHROMEDRIVER = "C:/chromedriver_win32/chromedriver.exe"
+keyboard = 'qwertyuiopasdfghjklzxcvbnm'
+ 
+# ドライバー指定でChromeブラウザを開く
+chrome_service = service.Service(executable_path=CHROMEDRIVER)
+driver = webdriver.Chrome(service=chrome_service)
+actions = ActionChains(driver)
+
+#driver.get("https://web.archive.org/web/20211227150528/https://www.powerlanguage.co.uk/wordle/")
+#driver.get("https://web.archive.org/web/20220101000801/https://www.powerlanguage.co.uk/wordle/")
+#driver.get("https://web.archive.org/web/20211230172040/https://www.powerlanguage.co.uk/wordle/")
+driver.get("https://www.nytimes.com/games/wordle/index.html")
+ga = driver.find_element(By.TAG_NAME, 'game-app').shadow_root
+gm = ga.find_element(By.TAG_NAME, 'game-modal').shadow_root
+gm.find_element(By.TAG_NAME, 'game-icon').click()
+
+gk = ga.find_element(By.TAG_NAME, 'game-keyboard').shadow_root
+b = gk.find_elements(By.TAG_NAME, 'button')
+
+gr = ga.find_elements(By.TAG_NAME, 'game-row')
+
+# 実行
+for n in range(6):    
+    print(ans)
+    keyboard_input(b, ans)
+    time.sleep(1.5)
+    gt = gr[n].shadow_root.find_elements(By.TAG_NAME, 'game-tile')
+    ManipulateData(inputManip())
+    NextWordAnalyzer(n+2)
+    ans = words[kingN]
+    if which == 0:
+        ans = words[kingN]
+    else:
+        ans = nonWords[kingN2]
+    
